@@ -13,9 +13,9 @@ pool:
   vmImage: 'windows-latest'
 ################### Variables ############################
 variables:
-- group: versioning-group
-- group: build-setup-group
-- group: repo-folder-group
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'master'
 ###################### Build Name ########################
 name: $(version.major).$(version.minor).$(version.build).$(BuildID)
 
