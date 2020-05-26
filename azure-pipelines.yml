@@ -27,3 +27,18 @@ steps:
 ###################### Install NuGet #####################
 - task: NuGetToolInstaller@1
   displayName: 'Install NuGet'
+##########################################################
+#############   CordisModules AuditViewer ################
+##########################################################
+- template: build/build-test.yml
+  parameters:
+    projectFolder: '$(foldermineRP.CAF.Modules.CordisAuditViewer)'
+    restoreSolution: '$(allSolutions)'
+    buildSolution: '$(allSolutions)'
+    buildPlatform: '$(buildPlatform)'
+    buildConfiguration: '$(buildConfiguration)'
+    stagingDirectory: '$(build.artifactStagingDirectory)'
+    packageSolution: '$(allNuspec)'
+    updatePackages: [
+                     "$(foldermineRP.CAF.Modules.CordisAuditViewer)/mineRP.CAF.Modules.CordisAuditViewer/mineRP.CAF.Modules.CordisAuditViewer.sln"
+                    ]
