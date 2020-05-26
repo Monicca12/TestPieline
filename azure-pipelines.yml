@@ -30,7 +30,7 @@ steps:
 ##########################################################
 #############   CordisModules AuditViewer ################
 ##########################################################
-- template: build/
+- template: build/mineRP.CAF.Modules.CordisAuditViewer 
   parameters:
     projectFolder: '$(foldermineRP.CAF.Modules.CordisAuditViewer)'
     restoreSolution: '$(allSolutions)'
