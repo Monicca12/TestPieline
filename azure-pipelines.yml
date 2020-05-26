@@ -1,19 +1,29 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+##########################################################
+########## CordisModules AuditViewer Build ###############
+##########################################################
 
+##################### Triggers ###########################
 trigger:
 - master
 
+
+#################### Build Pool ##########################
 pool:
+
   vmImage: 'windows-latest'
+################### Variables ############################
+variables:
+- group: versioning-group
+- group: build-setup-group
+- group: repo-folder-group
+###################### Build Name ########################
+name: $(version.major).$(version.minor).$(version.build).$(BuildID)
 
+##########################################################
+####################### Build Steps ######################
+##########################################################
 steps:
-- script: echo Pipiline Test!
-  displayName: 'CordisAuditViewer'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+###################### Install NuGet #####################
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet'
