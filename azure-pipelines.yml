@@ -30,11 +30,11 @@ steps:
 ##########################################################
 #############   CordisModules AuditViewer ################
 ##########################################################
-#- template: build/mineRP.CAF.Modules.CordisAuditViewer 
-  #parameters:
- #   projectFolder: '$(foldermineRP.CAF.Modules.CordisAuditViewer)'
- #   restoreSolution: '$(allSolutions)'
- #   buildSolution: '$(allSolutions)'
+- template: build/mineRP.CAF.Modules.CordisAuditViewer 
+  parameters:
+   projectFolder: '$(foldermineRP.CAF.Modules.CordisAuditViewer)'
+   restoreSolution: '$(allSolutions)'
+   buildSolution: '$(allSolutions)'
   #  buildPlatform: '$(buildPlatform)'
  #   buildConfiguration: '$(buildConfiguration)'
  #   stagingDirectory: '$(build.artifactStagingDirectory)'
