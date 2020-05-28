@@ -9,7 +9,7 @@ trigger:
 
 #################### Build Pool ##########################
 pool:
-
+ vmImage: 'windows-latest'
 ################### Variables ############################
 variables:
   solution: '**/*.sln'
