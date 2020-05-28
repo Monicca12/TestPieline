@@ -27,6 +27,14 @@ steps:
 ###################### Install NuGet #####################
 - task: NuGetToolInstaller@1
   displayName: 'Install NuGet'
+
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    clean: true
+
+    
+
 ##########################################################
 #############   CordisModules AuditViewer ################
 ##########################################################
