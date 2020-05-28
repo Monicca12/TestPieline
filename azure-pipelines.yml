@@ -32,8 +32,11 @@ steps:
     feedsToUse: 'select'
     vstsFeed: '54582f70-b76f-45af-95a3-4715f3d98a8a'
 
+###############Build ####################
 
-    
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
 
 ##########################################################
 #############   CordisModules AuditViewer ################
