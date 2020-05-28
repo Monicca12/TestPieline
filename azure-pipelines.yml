@@ -25,8 +25,12 @@ name: $(version.major).$(version.minor).$(version.build).$(BuildID)
 steps:
 
 ###################### Install NuGet #####################
-- task: NuGetToolInstaller@1
-  displayName: 'Install NuGet'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '54582f70-b76f-45af-95a3-4715f3d98a8a'
 
 - task: VSBuild@1
   inputs:
