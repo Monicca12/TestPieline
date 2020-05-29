@@ -12,7 +12,7 @@ pool:
  vmImage: 'windows-latest'
 ################### Variables ############################
 variables:
-  solution: '$(solution)'
+  solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'master'
   
@@ -28,14 +28,14 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: '$(solution)'
+    restoreSolution: '**/*.sln'
     feedsToUse: 'select'
     vstsFeed: '54582f70-b76f-45af-95a3-4715f3d98a8a'
 
 ###############Build ####################
 #- task: VSBuild@1 
 #  inputs:
-  #  solution: '$(solution)'
+  #  solution: '**\*.sln'
   #  msbuildArgs: 'build'
  ##   configuration: '$(buildConfiguration)'
  #   clean: 'true'
