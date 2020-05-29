@@ -35,7 +35,7 @@ steps:
 ###############Build ####################
 #- task: VSBuild@1 
 #  inputs:
-  #  solution: '**\*.sln'
+  #  solution: '**/*.sln'
   #  msbuildArgs: 'build'
  ##   configuration: '$(buildConfiguration)'
  #   clean: 'true'
